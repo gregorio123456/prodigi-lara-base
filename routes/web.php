@@ -5,6 +5,10 @@ use App\Http\Controllers\Testcontroller;
 use App\Http\Controllers\PippoController;
 use App\Http\Controllers\TopolinoController;
 use App\Http\Controllers\PaperinoController;
+use App\Http\Controllers\ClientiController;
+use App\Http\Controllers\OrdiniController;
+use App\Http\Controllers\FattureController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,3 +28,7 @@ Route::get('/test', [Testcontroller::class, 'prova']);
 Route::get('/pippo', [PippoController::class, 'provapippo']);
 Route::get('/topolino', [TopolinoController::class, 'provatopolino']);
 Route::get('/paperino', [PaperinoController::class, 'provapaperino']);
+
+Route::get('/clienti', [ClientiController::class, 'clienti']);
+Route::get('/ordini', [OrdiniController::class, 'ordini']);
+Route::get('/fatture', [FattureController::class, 'fatture']);
