@@ -8,7 +8,11 @@ class ClientiController extends Controller
 {
     public function clienti ()
     {
-       // echo 'pagina di test';
-       return view ('clienti');
+        $ele= ['mario rossi','luigi bianchi'];
+        
+        return view ('clienti',[
+         "nomi"=>$ele
+        ]);
+       
     }
 }

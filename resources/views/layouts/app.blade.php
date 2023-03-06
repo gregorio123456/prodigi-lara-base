@@ -4,6 +4,7 @@
     <style>
         h1{
             color: red;
+            text-align:center;
         }
         table,td,th{
             border: 1px solid black;

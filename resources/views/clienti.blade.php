@@ -8,14 +8,11 @@ clienti
 @endsection
 @section('table')
 <table>
-  <tr>
-    <th>mario</th>
-    <th>rossi</th>
-  </tr>
-  <tr>
-    <td>luigi</td>
-    <td>bianchi</td>
-    
-  </tr>
+ 
+@foreach($nomi as $nome)
+ <tr><td>{{$nome}}</td></tr>
+
+@endforeach
+ 
 </table>
 @endsection
