@@ -29,9 +29,12 @@ Route::post('/categories', [CategoryController::class, 'store'])->name('categori
 
 Route::get('/customer', [CustomerController::class, 'index'])->name('customer.index');
 Route::get('/customer/create', [CustomerController::class, 'create'])->name('customer.create');
+Route::post('/customer', [CustomerController::class, 'store'])->name('customer.store');
 
 Route::get('/order', [OrderController::class, 'index'])->name('order.index');
 Route::get('/order/create', [OrderController::class, 'create'])->name('order.create');
+Route::post('/order', [OrderController::class, 'store'])->name('order.store');
 
 Route::get('/invoice', [InvoiceController::class, 'index'])->name('invoice.index');
 Route::get('/invoice/create', [InvoiceController::class, 'create'])->name('invoice.create');
+Route::post('/invoice', [InvoiceController::class, 'store'])->name('invoice.store');

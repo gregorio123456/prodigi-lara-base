@@ -34,7 +34,7 @@ class OrderController extends Controller
         $validated = $request->validate([
             "name"=>'required'
         ]);
-        Category::create([
+        order::create([
             "name"=>$validated['name']
         ]);
         return redirect(route('order.index'))->with('message','Categoria creata con successo');

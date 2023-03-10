@@ -20,7 +20,8 @@ btn-primary">Aggiungi customer</a>
             @foreach($customer as $index => $customers)
                 <tr>
                     <th>{{ $index+1 }}</th>
-                    <td>{{ $customers->name }}</td>
+                    <td>{{ $customers->firstname }}</td>
+                    <td>{{ $customers->lastname }}</td>
                 </tr>
             @endforeach
         </tbody>

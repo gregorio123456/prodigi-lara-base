@@ -32,10 +32,15 @@ class InvoiceController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            "name"=>'required'
+            "code"=>'required',
+            "total"=>'required',
+            "code"=>'required'
         ]);
-        Category::create([
-            "name"=>$validated['name']
+        Invoice::create([
+            "code"=>$validated['code'],
+            "total"=>$validated['total'],
+            "payment"=>$validated['payment']
+
         ]);
         return redirect(route('invoice.index'))->with('message','Categoria creata con successo');
     }

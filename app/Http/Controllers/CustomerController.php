@@ -32,10 +32,12 @@ class CustomerController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            "name"=>'required'
+            "firstname"=>'required',
+            "lastname"=>'required'
         ]);
-        Category::create([
-            "name"=>$validated['name']
+        customer::create([
+            "firstname"=>$validated['firstname'],
+            "lastname"=>$validated['lastname'],
         ]);
         return redirect(route('customer.index'))->with('message','Categoria creata con successo');
     }
