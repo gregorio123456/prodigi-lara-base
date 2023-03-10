@@ -2,7 +2,15 @@
 @section('head_title','lista categorie')
 @section('content')
 <h1>lista categorie</h1>
-<a href="#"class="btn btn-primary">aggiungi categoria</a>
+<div class="mb-3">
+<a href="{{route('categories.create')}}" class="btn btn-primary" >aggiungi categoria</a>
+</div>
+@if(session('message') )
+<div class="alert alert-success" role="alert">
+  {{session('message')}}
+</div>
+@endif
+
 <table class="table">
   <thead>
     <tr>

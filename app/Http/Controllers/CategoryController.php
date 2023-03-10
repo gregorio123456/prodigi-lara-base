@@ -31,7 +31,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            "name"=>'required'
+        ]);
+        Category::create([
+            "name"=>$validated['name']
+        ]);
+        return redirect(route('categories.index'))->with('message','Categoria creata con successo');
     }
 
     /**
