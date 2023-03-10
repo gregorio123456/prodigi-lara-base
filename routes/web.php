@@ -8,6 +8,7 @@ use App\Http\Controllers\PaperinoController;
 use App\Http\Controllers\ClientiController;
 use App\Http\Controllers\OrdiniController;
 use App\Http\Controllers\FattureController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,5 @@ Route::get('/paperino', [PaperinoController::class, 'provapaperino']);
 Route::get('/clienti', [ClientiController::class, 'clienti']);
 Route::get('/ordini', [OrdiniController::class, 'ordini']);
 Route::get('/fatture', [FattureController::class, 'fatture']);
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
