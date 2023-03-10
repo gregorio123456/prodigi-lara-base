@@ -12,6 +12,29 @@ class CustomerSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+         $customer=[
+            [
+                "name"=>"Cronaca"
+            ],
+            [
+                "name"=>"Sport"
+            ],
+            [
+                "name"=>"Politica"
+            ],
+            [
+                "name"=>"Salute"
+            ],
+           ];
+        
+            function run(): void
+            {
+                foreach($this->customer as $customer)
+                {
+                    customer::create([
+                        "name"=>$customer['name']
+                    ]);
+                }
+            }
     }
 }

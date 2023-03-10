@@ -1,26 +1,26 @@
 @extends('layouts.app')
 
-@section('head_title', 'Lista customer')
+@section('head_title', 'Lista ordine')
 
 @section('content')
-    <h1>Lista customer</h1>
+    <h1>Lista ordine</h1>
 
     <div class="mb-4">
         <a href="{{ route('customer.create') }}" class="btn
-btn-primary">Aggiungi customer</a>
+btn-primary">Aggiungi ordine</a>
     </div>
     <table class="table">
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nome customer</th>
+                <th scope="col">ordine</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($customer as $index => $customers)
+            @foreach($order as $index => $order)
                 <tr>
                     <th>{{ $index+1 }}</th>
-                    <td>{{ $customers->name }}</td>
+                    <td>{{ $order->name }}</td>
                 </tr>
             @endforeach
         </tbody>

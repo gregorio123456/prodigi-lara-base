@@ -12,9 +12,9 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $customer= Category::all();
+        $customers= customer::all();
         return view('customer.index',[
-            "customer"=>$customer,
+            "customer"=>$customers,
         ]);
     }
 

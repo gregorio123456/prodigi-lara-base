@@ -12,7 +12,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $order= Category::all();
+        $order= order::all();
         return view('order.index',[
             "order"=>$order,
         ]);

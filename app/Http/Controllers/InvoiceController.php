@@ -12,7 +12,7 @@ class InvoiceController extends Controller
      */
     public function index()
     {
-        $invoice= Category::all();
+        $invoice= invoice::all();
         return view('invoice.index',[
             "invoice"=>$invoice,
         ]);
