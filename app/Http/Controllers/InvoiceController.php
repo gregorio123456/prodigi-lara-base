@@ -12,7 +12,10 @@ class InvoiceController extends Controller
      */
     public function index()
     {
-        //
+        $invoice= Category::all();
+        return view('invoice.index',[
+            "invoice"=>$invoice,
+        ]);
     }
 
     /**
@@ -20,7 +23,7 @@ class InvoiceController extends Controller
      */
     public function create()
     {
-        //
+        return view('invoice.create');
     }
 
     /**
@@ -28,7 +31,13 @@ class InvoiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            "name"=>'required'
+        ]);
+        Category::create([
+            "name"=>$validated['name']
+        ]);
+        return redirect(route('invoice.index'))->with('message','Categoria creata con successo');
     }
 
     /**

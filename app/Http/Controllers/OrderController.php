@@ -12,7 +12,10 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $order= Category::all();
+        return view('order.index',[
+            "order"=>$order,
+        ]);
     }
 
     /**
@@ -20,7 +23,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        return view('order.create');  
     }
 
     /**
@@ -28,7 +31,13 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            "name"=>'required'
+        ]);
+        Category::create([
+            "name"=>$validated['name']
+        ]);
+        return redirect(route('order.index'))->with('message','Categoria creata con successo');
     }
 
     /**

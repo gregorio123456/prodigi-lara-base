@@ -25,14 +25,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', [Testcontroller::class, 'prova']);
-Route::get('/pippo', [PippoController::class, 'provapippo']);
-Route::get('/topolino', [TopolinoController::class, 'provatopolino']);
-Route::get('/paperino', [PaperinoController::class, 'provapaperino']);
 
-Route::get('/clienti', [ClientiController::class, 'clienti']);
-Route::get('/ordini', [OrdiniController::class, 'ordini']);
-Route::get('/fatture', [FattureController::class, 'fatture']);
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
 Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
+
+
+Route::get('/custumer', [CustumerController::class, 'index'])->name('customer.index');
+Route::get('/customer/create', [CustomerController::class, 'create'])->name('customer.create');
+Route::get('/order', [OrderController::class, 'index'])->name('order.index');
+Route::get('/order/create', [OrderController::class, 'create'])->name('order.create');
+Route::get('/invoice', [InvoiceController::class, 'index'])->name('invoice.index');
+Route::get('/invoice/create', [InvoiceController::class, 'create'])->name('invoice.create');

@@ -12,7 +12,10 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+        $customer= Category::all();
+        return view('customer.index',[
+            "customer"=>$customer,
+        ]);
     }
 
     /**
@@ -20,7 +23,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        return view('customer.create');
     }
 
     /**
@@ -28,7 +31,13 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            "name"=>'required'
+        ]);
+        Category::create([
+            "name"=>$validated['name']
+        ]);
+        return redirect(route('customer.index'))->with('message','Categoria creata con successo');
     }
 
     /**
