@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('invocies', function (Blueprint $table) {
             $table->id();
+            $table->varchar('code',50);
+            $table->int('total',50);
+            $table->int('total',50);
+            $table->enum('status', ['carta', 'bancomat']);
             $table->timestamps();
         });
     }
