@@ -50,3 +50,19 @@ Route::delete('/customer/{customer}', [CustomerController::class, 'destroy'])->n
 Route::get('/customer/edit/{customer}', [CustomerController::class, 'edit'])->name('customer.edit');
 Route::put('/customer/{customer}', [CustomerController::class, 'update'])->name('customer.update');
 Route::get('/customer/{customer}', [CustomerController::class, 'show'])->name('customer.show');
+
+Route::get('/invoice', [InvoiceController::class, 'index'])->name('invoice.index');
+Route::get('/invoice/create', [InvoiceController::class, 'create'])->name('invoice.create');
+Route::post('/invoice', [InvoiceController::class, 'store'])->name('invoice.store');
+Route::delete('/invoice/{invoice}', [InvoiceController::class, 'destroy'])->name('invoice.destroy');
+Route::get('/invoice/edit/{invoice}', [InvoiceController::class, 'edit'])->name('invoice.edit');
+Route::put('/invoice/{invoice}', [InvoiceController::class, 'update'])->name('invoice.update');
+Route::get('/invoice/{invoice}', [InvoiceController::class, 'show'])->name('invoice.show');
+
+Route::get('/order', [OrderController::class, 'index'])->name('order.index');
+Route::get('/order/create', [OrderController::class, 'create'])->name('order.create');
+Route::post('/order', [OrderController::class, 'store'])->name('order.store');
+Route::delete('/order/{order}', [OrderController::class, 'destroy'])->name('order.destroy');
+Route::get('/order/edit/{order}', [OrderController::class, 'edit'])->name('order.edit');
+Route::put('/order/{order}', [OrderController::class, 'update'])->name('order.update');
+Route::get('/order/{order}', [OrderController::class, 'show'])->name('order.show');

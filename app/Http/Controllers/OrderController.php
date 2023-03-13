@@ -47,7 +47,9 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+        return view('order.show',[
+            "order"=>$order
+        ]);
     }
 
     /**
@@ -55,7 +57,9 @@ class OrderController extends Controller
      */
     public function edit(Order $order)
     {
-        //
+        return view('order.edit',[
+            "order"=>$order
+        ]);
     }
 
     /**
@@ -63,7 +67,15 @@ class OrderController extends Controller
      */
     public function update(Request $request, Order $order)
     {
-        //
+        $validated = $request->validate([
+            "code"=>'required',
+            "total"=>'required',
+            
+        ]);
+        $invoice->code=$validated['code'];
+        $invoice->total=$validated['total'];
+        $invoice->save();
+        return redirect(route('invoice.index'))->with('message','Categoria modificata con successo');
     }
 
     /**
@@ -71,6 +83,7 @@ class OrderController extends Controller
      */
     public function destroy(Order $order)
     {
-        //
+        $order->delete();
+        return redirect(route('order.index'))->with('danger','Categoria eliminata con successo');
     }
 }

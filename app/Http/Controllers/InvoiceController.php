@@ -50,7 +50,9 @@ class InvoiceController extends Controller
      */
     public function show(Invoice $invoice)
     {
-        //
+        return view('invoice.show',[
+            "invoice"=>$invoice
+        ]);
     }
 
     /**
@@ -58,7 +60,9 @@ class InvoiceController extends Controller
      */
     public function edit(Invoice $invoice)
     {
-        //
+        return view('invoice.edit',[
+            "invoice"=>$invoice
+        ]);
     }
 
     /**
@@ -66,7 +70,16 @@ class InvoiceController extends Controller
      */
     public function update(Request $request, Invoice $invoice)
     {
-        //
+        $validated = $request->validate([
+            "code"=>'required',
+            "total"=>'required',
+            "payment"=>'required'
+        ]);
+        $invoice->code=$validated['code'];
+        $invoice->total=$validated['total'];
+        $invoice->payment=$validated['payment'];
+        $invoice->save();
+        return redirect(route('invoice.index'))->with('message','Categoria modificata con successo');
     }
 
     /**
@@ -74,6 +87,7 @@ class InvoiceController extends Controller
      */
     public function destroy(Invoice $invoice)
     {
-        //
+        $invoice->delete();
+        return redirect(route('invoice.index'))->with('danger','Categoria eliminata con successo');
     }
 }

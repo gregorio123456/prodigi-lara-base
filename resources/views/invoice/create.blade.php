@@ -5,7 +5,7 @@
 @section ('content')
 
 <h1>Crea nuovo invoice</h1>
-
+<a href="{{route('invoice.index')}}" class="btn btn-primary">Torna alla lista</a>
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>

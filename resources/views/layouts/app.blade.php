@@ -10,6 +10,24 @@
     <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary ">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse "  id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{route('customer.index')}}">Customer</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('order.index')}}">Order</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('invoice.index')}}">Invoice</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
     <div class="container">
    <h1 > @yield('content')</h1>
    @yield('table')
