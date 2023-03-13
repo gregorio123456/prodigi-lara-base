@@ -30,9 +30,9 @@ placeholder="Inserisci firstname" >
   </div>
   <div class="mb-3">
     <label for="payment" class="form-label">Modalità pagamento</label>
-    <select id="country" name="country">
-      <option value="australia">carta</option>
-      <option value="canada">bancomat</option>
+    <select id="payment" name="payment">
+      <option value="carta">carta</option>
+      <option value="bancomat">bancomat</option>
     </select>
   </div>
   <button class="btn btn-primary">Inserisci </button>

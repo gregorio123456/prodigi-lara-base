@@ -13,14 +13,16 @@ btn-primary">Aggiungi invoice</a>
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nome invoice</th>
+                <th scope="col">Code invoice</th>
             </tr>
         </thead>
         <tbody>
             @foreach($invoice as $index => $invoice)
                 <tr>
                     <th>{{ $index+1 }}</th>
-                    <td>{{ $invoice->name }}</td>
+                    <td>{{ $invoice->code }}</td>
+                    <td>{{ $invoice->total }}</td>
+                    <td>{{ $invoice->payment }}</td>
                 </tr>
             @endforeach
         </tbody>

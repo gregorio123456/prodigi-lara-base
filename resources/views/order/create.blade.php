@@ -16,7 +16,7 @@
     </div>
 @endif
 
-<form method="post" action="{{route('customer.store')}}">
+<form method="post" action="{{route('order.store')}}">
   @csrf
   <div class="mb-3">
     <label for="code" class="form-label">code order</label>

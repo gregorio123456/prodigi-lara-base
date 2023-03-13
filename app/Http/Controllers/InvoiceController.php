@@ -34,7 +34,7 @@ class InvoiceController extends Controller
         $validated = $request->validate([
             "code"=>'required',
             "total"=>'required',
-            "code"=>'required'
+            "payment"=>'required'
         ]);
         Invoice::create([
             "code"=>$validated['code'],
