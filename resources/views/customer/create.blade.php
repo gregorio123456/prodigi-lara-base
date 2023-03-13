@@ -5,7 +5,7 @@
 @section ('content')
 
 <h1>Crea nuova customer</h1>
-
+<link href="laravel.css" rel="stylesheet" type="text/css">
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
