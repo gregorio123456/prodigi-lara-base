@@ -6,21 +6,23 @@
     <h1>Lista ordine</h1>
 
     <div class="mb-4">
-        <a href="{{ route('customer.create') }}" class="btn
+        <a href="{{ route('order.create') }}" class="btn
 btn-primary">Aggiungi ordine</a>
     </div>
     <table class="table">
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">ordine</th>
+                <th scope="col">code order</th>
+                <th scope="col">total</th>
             </tr>
         </thead>
         <tbody>
             @foreach($order as $index => $order)
                 <tr>
                     <th>{{ $index+1 }}</th>
-                    <td>{{ $order->name }}</td>
+                    <td>{{ $order->code }}</td>
+                    <td>{{ $order->total }}</td>
                 </tr>
             @endforeach
         </tbody>

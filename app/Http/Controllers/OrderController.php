@@ -32,10 +32,12 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            "name"=>'required'
+            "code"=>'required',
+            "total"=>'required'
         ]);
         order::create([
-            "name"=>$validated['name']
+            "code"=>$validated['code'],
+            "total"=>$validated['total']
         ]);
         return redirect(route('order.index'))->with('message','Categoria creata con successo');
     }

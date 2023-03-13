@@ -19,9 +19,12 @@
 <form method="post" action="{{route('customer.store')}}">
   @csrf
   <div class="mb-3">
-    <label for="name" class="form-label">Nome order</label>
-    <input type="text" class="form-control" id="name" name="name"
-placeholder="Inserisci nuovo order" >
+    <label for="code" class="form-label">code order</label>
+    <input type="text" class="form-control" id="code" name="code" placeholder="Inserisci nuovo order" >
+  </div>
+  <div class="mb-3">
+    <label for="total" class="form-label">total</label>
+    <input type="text" class="form-control" id="total" name="total" placeholder="Inserisci totale order" >
   </div>
   <button class="btn btn-primary">Inserisci </button>
 </form>

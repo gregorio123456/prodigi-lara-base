@@ -12,6 +12,17 @@ class OrderSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        function run(): void
+                {
+                    foreach($this->order as $order)
+                    {
+                        order::create([
+                            "code"=>$order['code'],
+                            "total"=>$order['total']
+                           
+                        ]);
+                    }
+                }
+    
     }
 }
