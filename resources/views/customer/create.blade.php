@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section ('head_title', 'Crea nuovo customer');
+@section ('head_title', 'Crea nuovo customer')
 
 @section ('content')
 

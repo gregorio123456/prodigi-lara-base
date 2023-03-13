@@ -14,6 +14,8 @@ btn-primary">Aggiungi invoice</a>
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Code invoice</th>
+                <th scope="col">Total</th>
+                <th scope="col">Payment</th>
             </tr>
         </thead>
         <tbody>

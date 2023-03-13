@@ -14,7 +14,7 @@ class CustomerController extends Controller
     {
         $customers= customer::all();
         return view('customer.index',[
-            "customer"=>$customers,
+            "customers"=>$customers,
         ]);
     }
 
@@ -47,7 +47,9 @@ class CustomerController extends Controller
      */
     public function show(Customer $customer)
     {
-        //
+        return view('customer.show',[
+            "customer"=>$customer
+        ]);
     }
 
     /**
@@ -55,7 +57,9 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer)
     {
-        //
+        return view('customer.edit',[
+            "customer"=>$customer
+        ]);
     }
 
     /**
@@ -63,7 +67,15 @@ class CustomerController extends Controller
      */
     public function update(Request $request, Customer $customer)
     {
-        //
+        $validated = $request->validate([
+            "firstname"=>'required',
+            "lastname"=>'required'
+        ]);
+        $customer->firstname=$validated['firstname'];
+        $customer->lastname=$validated['lastname'];
+        $customer->save();
+        
+        return redirect(route('customer.index'))->with('message','Categoria modificata con successo');
     }
 
     /**
@@ -71,6 +83,7 @@ class CustomerController extends Controller
      */
     public function destroy(Customer $customer)
     {
-        //
+        $customer->delete();
+        return redirect(route('customer.index'))->with('danger','Categoria eliminata con successo');
     }
 }
